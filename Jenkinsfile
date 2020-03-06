@@ -1,7 +1,7 @@
 #!groovy
 
 pipeline {
-    agent {
+    agent master {
         docker {
             image 'python:3.7'
         }
