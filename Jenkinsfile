@@ -1,10 +1,9 @@
 #!groovy
 
 pipeline {
-    agent {
+    agent any {
         docker {
             image 'python:3.7'
-            label 'master'
         }
     }
 
