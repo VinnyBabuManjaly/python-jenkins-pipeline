@@ -7,13 +7,13 @@ pipeline {
             steps {
                 echo "-=- preparing project environment -=-"
                 // Python dependencies
-                sh "pip3 install -r requirements.txt"
+                sh "pip install -r requirements.txt"
             }
         }
         stage('Compile') {
             steps {
                 echo "-=- compiling project -=-"
-                sh "python3 -m compileall ."
+                sh "python -m compileall ."
             }
         }
 
