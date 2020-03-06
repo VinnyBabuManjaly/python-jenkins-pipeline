@@ -1,12 +1,10 @@
-module: app
+# config.toml
+[cosmic-ray]
+module-path = "app"
+python-version = ""
+timeout = 10
+exclude-modules = []
+test-command = "python -m unittest test"
 
-baseline: 10
-
-exclude-modules:
-
-test-runner:
-  name: unittest
-  args: test
-
-execution-engine:
-  name: local
+[cosmic-ray.execution-engine]
+name = "local"
