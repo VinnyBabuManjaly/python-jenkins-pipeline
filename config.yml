@@ -8,3 +8,7 @@ test-command = "python -m unittest test"
 
 [cosmic-ray.execution-engine]
 name = "local"
+
+[cosmic-ray.cloning]
+method = 'copy'
+commands = []
