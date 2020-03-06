@@ -1,8 +1,9 @@
 #!groovy
 
 pipeline {
-    agent any
-
+    agent {
+        label 'master'
+    }
     stages {
         stage('Environment preparation') {
             steps {
