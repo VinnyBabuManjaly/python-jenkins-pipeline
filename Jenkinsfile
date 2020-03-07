@@ -50,7 +50,7 @@ pipeline {
         stage('Run Docker image') {
             steps {
                 echo "-=- run Docker image -=-"
-                bat "docker run --name python-jenkins-pipeline --detach --rm --network ci -p 5001:5000 vinnybabumanjaly/python-jenkins-pipeline:0.1"
+                bat "docker run --name python-jenkins-pipeline --detach --rm -p 5001:5000 vinnybabumanjaly/python-jenkins-pipeline:0.1"
             }
         }
 
