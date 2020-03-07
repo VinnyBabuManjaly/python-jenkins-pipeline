@@ -43,14 +43,14 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 echo "-=- build Docker image -=-"
-                bat "docker build -t VinnyBabuManjaly/python-jenkins-pipeline:0.1 ."
+                bat "docker build -t vinnybabumanjaly/python-jenkins-pipeline:0.1 ."
             }
         }
 
         stage('Run Docker image') {
             steps {
                 echo "-=- run Docker image -=-"
-                bat "docker run --name python-jenkins-pipeline --detach --rm --network ci -p 5001:5000 VinnyBabuManjaly/python-jenkins-pipeline:0.1"
+                bat "docker run --name python-jenkins-pipeline --detach --rm --network ci -p 5001:5000 vinnybabumanjaly/python-jenkins-pipeline:0.1"
             }
         }
 
@@ -86,7 +86,7 @@ pipeline {
             steps {
                 echo "-=- push Docker image -=-"
                 withDockerRegistry([ credentialsId: "werdar-wedartg-uiny67-adsuja0-12njkn3", url: "" ]) {
-                    bat "docker push VinnyBabuManjaly/python-jenkins-pipeline:0.1"
+                    bat "docker push vinnybabumanjaly/python-jenkins-pipeline:0.1"
                 }
                 
                 //sh "mvn docker:push"
