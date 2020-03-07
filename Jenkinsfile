@@ -29,7 +29,7 @@ pipeline {
             steps {
                 echo "-=- execute mutation tests -=-"
                 // initialize mutation testing session
-                bat "cosmic-ray init config.yml jenkins_session && cosmic-ray --verbosity=INFO exec jenkins_session && cosmic-ray dump jenkins_session | cr-report"    
+                bat "cosmic-ray init config.yml jenkins_session && cosmic-ray --verbosity=INFO exec jenkins_session && cosmic-ray dump jenkins_session | cr-report jenkins_session"    
             }
         }
 
@@ -97,7 +97,7 @@ pipeline {
     post {
         always {
             echo "-=- remove deployment -=-"
-            bat "docker stop python-jenkins-pipeline"
+            // bat "docker stop python-jenkins-pipeline"
         }
     }
 }
